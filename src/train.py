@@ -26,12 +26,6 @@ def ensure_dir(path):
     Path(path).mkdir(parents=True, exist_ok=True)
 
 
-def select_learning_rate(mode, default_lr):
-    if default_lr:
-        return default_lr
-    return 1e-4 if mode == "finetune" else 1e-3
-
-
 def plot_history(history, output_prefix):
     history_dict = history.history
 

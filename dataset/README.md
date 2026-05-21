@@ -1,4 +1,4 @@
-FER-2013-datasetti sijoitetaan tähän kansioon joko valmiina kuvahakemistorakenteena tai CSV-muodosta muunnettuna.
+FER-2013-datasetti sijoitetaan tähän kansioon valmiina kuvahakemistorakenteena tai CSV-muodosta muunnettuna.
 
 Suositeltu rakenne:
 
@@ -22,8 +22,4 @@ dataset/raw/train/neutral/*.jpg
 
 Jos FER-2013 on ladattu CSV-muodossa, se muunnetaan ensin kuvatiedostoiksi ja jaetaan train/val/test-kansioihin.
 
-Jos datasetissä ei ole valmista validation-jakoa, käytetty jako voi olla esimerkiksi:
-
-- train 70 %
-- val 15 %
-- test 15 %
+Jos datasetissä ei ole valmista validation-jakoa, train-datasta erotetaan erillinen validation-osuus. Tässä projektissa käytetty hakemistorakenne sisältää erilliset `train`, `val` ja `test` -osiot.

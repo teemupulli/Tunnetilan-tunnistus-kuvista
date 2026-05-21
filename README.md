@@ -14,7 +14,7 @@ Rakennetaan kuvapohjainen tunnetilaluokittelija, joka tunnistaa ihmisten kasvois
 
 Projektissa käytetty datasetti:
 
-- FER-2013
+- FER-2013: https://www.kaggle.com/datasets/msambare/fer2013
 
 Tyypilliset tunnetilaluokat:
 
@@ -55,13 +55,13 @@ Jos FER-2013 tulee yhtenä CSV-tiedostona, se muunnetaan ensin yllä olevaan hak
 pip install -r requirements.txt
 ```
 
-Jos notebook antaa virheen tyyliin `ModuleNotFoundError`, kyse on yleensä siitä että aktiiviseen Jupyter-kerneliin ei ole vielä asennettu projektin riippuvuuksia. Aja silloin samaan Python-ympäristöön:
+Jos notebook antaa virheen tyyliin `ModuleNotFoundError`, aktiivinen Jupyter-kernel ei yleensä käytä samaa Python-ympäristöä, johon riippuvuudet on asennettu. Riippuvuudet asennetaan samaan ympäristöön komennolla:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Tarvittaessa voit rekisteröidä ympäristön myös omaksi Jupyter-kerneliksi:
+Ympäristön voi rekisteröidä myös omaksi Jupyter-kerneliksi:
 
 ```bash
 python -m ipykernel install --user --name tunnetila-fer --display-name "Python (tunnetila-fer)"
@@ -69,7 +69,7 @@ python -m ipykernel install --user --name tunnetila-fer --display-name "Python (
 
 ## Koulutus
 
-Projektin voi toteuttaa joko skripteillä tai notebookin kautta. Selkein tapa ajaa koko työnkulku on käyttää notebookia:
+Työnkulku voidaan ajaa joko skripteillä tai notebookin kautta. Projektin tulokset on koottu notebookiin:
 
 ```bash
 jupyter notebook notebooks/01_emotion_recognition_fer2013.ipynb
@@ -115,25 +115,24 @@ Projektin keskeiset tiedostot ja tuotokset ovat:
 
 - notebook `.ipynb`
 - notebookin `.html`-versio
-- datasetin lähde tai linkki FER-2013-datasettiin
+- datasetin lähde ja datan asetteluohje
 - ohjeet mallien uudelleenkouluttamiseen
-- valmis raportti tai kattavasti dokumentoitu notebook
-- tekoälyn käytön dokumentointi
+- raportti, jossa käsitellään tekninen toteutus, tulokset, eettiset näkökohdat ja tekoälyn käyttö
 
 Raakadataa ja koulutettuja mallipainoja ei versionoida repossa. Datasetti sijoitetaan paikallisesti `dataset/raw/`-kansioon ja mallit tallentuvat koulutuksen aikana `models/`-kansioon.
 
-HTML-version voi tehdä esimerkiksi komennolla:
+Notebookin HTML-versio tuotetaan komennolla:
 
 ```bash
 jupyter nbconvert --to html notebooks/01_emotion_recognition_fer2013.ipynb
 ```
 
-## Mitä tässä projektissa kannattaa analysoida
+## Analyysin painopisteet
 
-- mitkä tunnetilat sekoittuvat toisiinsa useimmin
-- auttaako augmentaatio pieniä tai vaikeita luokkia
-- kuinka paljon siirto-oppiminen parantaa baseline-malliin verrattuna
-- missä määrin malli kärsii luokkaepätasapainosta
+- tunnetilaluokkien sekoittuminen confusion matrixissa
+- data-augmentaation merkitys haastaville luokille
+- baseline-CNN:n, feature extractionin ja fine-tuningin erot
+- luokkaepätasapainon vaikutus mallin toimintaan
 - tunnetilan tunnistuksen eettiset riskit ja rajoitukset
 
 ## Huomio

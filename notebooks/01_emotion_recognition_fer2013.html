@@ -8853,13 +8853,9 @@ weighted avg       0.56      0.57      0.56      7178
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Pohdinta">Pohdinta<a class="anchor-link" href="#Pohdinta">¶</a></h2><p>Raportissa kannattaa kommentoida ainakin seuraavia:</p>
-<ul>
-<li>miten baseline-CNN ja siirto-oppiminen erosivat toisistaan</li>
-<li>mitkä tunnetilat sekoittuivat eniten</li>
-<li>miten luokkaepätasapaino vaikutti erityisesti <code>disgust</code>-luokkaan</li>
-<li>millaisia eettisiä rajoitteita tunnetilan tunnistukseen liittyy</li>
-</ul>
+<h2 id="Pohdinta">Pohdinta<a class="anchor-link" href="#Pohdinta">¶</a></h2><p>Projektin tulokset osoittivat, että tunnetilan tunnistus FER-2013-datasetillä on selvästi haastava tehtävä. Paras testitarkkuus saavutettiin MobileNetV2:n fine-tuned versiolla (<code>0.5663</code>), mutta myös baseline-CNN pääsi lähes samaan tulokseen (<code>0.5659</code>). Sen sijaan pelkkä MobileNetV2 feature extraction jäi selvästi heikommaksi (<code>0.4451</code>). Tämä viittaa siihen, että esikoulutettu runko ei yksin riittänyt tähän tehtävään, vaan mallin piirteitä piti hienosäätää tunnetilaluokitteluun sopivammiksi.</p>
+<p>Luokkakohtaiset tulokset olivat myös opettavaisia. <code>happy</code> ja <code>surprise</code> tunnistuivat parhaiten, mikä on loogista, koska ne ovat usein visuaalisesti selkeämpiä kuin monet muut tunnetilat. Vaikeimpia luokkia olivat <code>disgust</code> ja <code>fear</code>. Erityisesti <code>disgust</code> kärsi sekä datan pienestä määrästä että siitä, että ilme muistuttaa helposti muita negatiivisia tunnetiloja. Fine-tuning paransi vaikeita luokkia enemmän kuin pelkkä feature extraction, mikä tekee siitä tärkeän osan projektin johtopäätöksiä.</p>
+<p>Projektin kannalta kiinnostavaa oli myös se, että yksinkertainen baseline-CNN oli yllättävän kilpailukykyinen. Tämä muistuttaa siitä, että siirto-oppiminen ei automaattisesti voita yksinkertaisempaa mallia, varsinkaan jos esikoulutettua verkkoa ei mukauteta tarpeeksi tehtävän erityispiirteisiin. Samalla tulokset osoittavat, että tunnetilaluokittelu ei ole vain tekninen ongelma vaan myös eettinen: kasvojen ilme ei aina vastaa henkilön todellista tunnetta, ja mallien käyttö käytännön sovelluksissa vaatii erityistä varovaisuutta.</p>
 </div>
 </div>
 </div>

@@ -17,35 +17,9 @@ Toteutetaan vähintään kaksi mallia:
 
 Lisäksi kokeillaan data-augmentaatiota ja mahdollisesti hienosäätöä vapauttamalla osa esikoulutetun mallin viimeisistä kerroksista. Mallien vertailussa käytetään ainakin accuracya, luokkakohtaista precision/recall/F1-arviointia sekä confusion matrixia.
 
-## Aikataulu
+## Työn toteutus
 
-Viikko 5:
-
-- datasetin lataus ja projektirungon valmistelu
-- baseline-mallin ensimmäinen koulutus
-
-Viikko 6:
-
-- siirto-oppimismallin koulutus
-- data-augmentaation ja hyperparametrien testaus
-
-Viikko 7:
-
-- fine-tuning tai toinen siirto-oppimismalli
-- virheanalyysi ja tulosten visualisointi
-
-Viikko 8:
-
-- raportin ja notebookin viimeistely
-- loppuesityksen valmistelu
-
-## Työnjako
-
-Jos projekti tehdään ryhmässä, työnjako voidaan jakaa esimerkiksi näin:
-
-- henkilö 1: datan valmistelu ja baseline-malli
-- henkilö 2: siirto-oppimismalli ja fine-tuning
-- henkilö 3: arviointi, visualisoinnit, raportti ja esitys
+Projekti toteutettiin yksilötyönä. Työ eteni vaiheittain siten, että ensin valmisteltiin datasetti ja baseline-malli, sen jälkeen koulutettiin siirto-oppimismallit ja lopuksi tehtiin arviointi, visualisoinnit, raportti ja esitysmateriaalit.
 
 ## Riskit ja varasuunnitelma
 

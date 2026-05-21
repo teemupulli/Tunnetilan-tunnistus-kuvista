@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Models and training outputs
+models/
+*.h5
+*.keras
+*.ckpt
+*.weights.h5
+
+# Reports generated during runs
+report/*.png
+report/*_classification_report.txt
+report/*_classification_report.json
+report/*_confusion_matrix.png
+report/*_history.json
+
+# Local training artifacts
+src/*_history.json
+src/*_accuracy.png
+src/*_loss.png
+
+# Dataset contents
+dataset/raw/
+dataset/processed/
+dataset/interim/
+dataset/cache/
+*.csv
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

@@ -45,6 +45,7 @@ Jos FER-2013 tulee yhtenä CSV-tiedostona, se muunnetaan ensin yllä olevaan hak
 
 - `project_plan.md` : lyhyt projektisuunnitelma
 - `dataset/README.md` : datan asetteluohje
+- `notebooks/01_emotion_recognition_fer2013.ipynb` : toistettava notebook-versio opettajaa ja palautusta varten
 - `src/data_pipeline.py` : datan lataus ja augmentaatio
 - `src/models.py` : baseline- ja transfer learning -mallit
 - `src/train.py` : mallin koulutus
@@ -59,7 +60,35 @@ Jos FER-2013 tulee yhtenä CSV-tiedostona, se muunnetaan ensin yllä olevaan hak
 pip install -r requirements.txt
 ```
 
+Jos notebook antaa virheen tyyliin `ModuleNotFoundError`, kyse on yleensä siitä että aktiiviseen Jupyter-kerneliin ei ole vielä asennettu projektin riippuvuuksia. Aja silloin samaan Python-ympäristöön:
+
+```bash
+pip install -r requirements.txt
+```
+
+Tarvittaessa voit rekisteröidä ympäristön myös omaksi Jupyter-kerneliksi:
+
+```bash
+python -m ipykernel install --user --name tunnetila-fer --display-name "Python (tunnetila-fer)"
+```
+
 ## Koulutus
+
+Projektin voi toteuttaa joko skripteillä tai notebookin kautta. Palautusta ja toistettavuutta varten suositeltu tapa on ajaa notebook:
+
+```bash
+jupyter notebook notebooks/01_emotion_recognition_fer2013.ipynb
+```
+
+Notebook sisältää:
+
+- datasetin tarkistuksen
+- baseline-CNN:n koulutuksen
+- MobileNetV2 feature extraction -koulutuksen
+- valinnaisen fine-tuning-vaiheen
+- confusion matrixin ja luokitteluraportin
+
+Skriptipohjainen ajo on edelleen hyödyllinen nopeissa kokeiluissa:
 
 Baseline-CNN:
 
@@ -83,6 +112,23 @@ python src/train.py --mode finetune --data_dir dataset/raw --epochs 20 --batch_s
 
 ```bash
 python src/evaluate.py --model_path models/feature_best.keras --data_dir dataset/raw --split test --image_size 96 --output_prefix report/feature_eval
+```
+
+## Palautusta varten
+
+Tehtävänannon näkökulmasta lopullisessa palautuksessa pitäisi olla vähintään:
+
+- notebook `.ipynb`
+- notebookin `.html`-versio
+- datasetin lähde tai linkki FER-2013-datasettiin
+- koulutettujen mallien tiedostot tai ohjeet niiden uudelleenkouluttamiseen
+- valmis raportti tai kattavasti dokumentoitu notebook
+- tekoälyn käytön dokumentointi
+
+HTML-version voi tehdä esimerkiksi komennolla:
+
+```bash
+jupyter nbconvert --to html notebooks/01_emotion_recognition_fer2013.ipynb
 ```
 
 ## Mitä tässä projektissa kannattaa analysoida

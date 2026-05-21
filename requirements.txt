@@ -6,3 +6,4 @@ scikit-learn
 pillow
 seaborn
 jupyter
+ipykernel

@@ -1,0 +1,14 @@
+{
+  "class_names": [
+    "angry",
+    "disgust",
+    "fear",
+    "happy",
+    "neutral",
+    "sad",
+    "surprise"
+  ],
+  "baseline_test_accuracy": 0.5658957958221436,
+  "feature_test_accuracy": 0.4451100528240204,
+  "finetune_test_accuracy": 0.5663137435913086
+}

@@ -126,13 +126,7 @@ Tämä on projektin kannalta kiinnostava tulos, koska siirto-oppiminen ei ollut 
 
 Tulosten perusteella paras malli oli niukasti MobileNetV2:n fine-tuned versio, mutta ero baseline-CNN:ään oli hyvin pieni. Tämä tarkoittaa, että projektissa ei saatu vain yksinkertaista tulosta, jossa suurempi malli voittaa automaattisesti, vaan mallien välille syntyi oikeasti analysoitava ero. Juuri tällainen vertailu on loppuprojektin kannalta arvokas.
 
-Raporttiin kannattaa liittää notebookista seuraavat visualisoinnit:
-
-- baseline-CNN:n accuracy- ja loss-käyrät
-- feature extraction -mallin accuracy- ja loss-käyrät
-- fine-tuned mallin accuracy- ja loss-käyrät
-- confusion matrix ainakin parhaalle mallille
-- luokitteluraportit, jotta luokkakohtaiset erot näkyvät tarkemmin
+Tuloksia havainnollistettiin koulutuskäyrillä, confusion matrixeilla ja luokitteluraporteilla. Ne auttoivat näkemään, miten mallien erot jakautuivat yksittäisiin tunnetilaluokkiin eikä vain kokonaisaccuracyyn.
 
 Erityisen mielenkiintoinen jatkoanalyysin kohde on se, mitkä tunnetilat menivät useimmin sekaisin. FER-2013 on haastava datasetti, jossa ilmeet ovat pieniä, osin epäselviä ja luokkien väliset erot voivat olla hienovaraisia. Siksi noin 56 % tarkkuus ei ole oppimisprojektissa heikko tulos, vaan pikemminkin realistinen osoitus ongelman vaikeudesta.
 
@@ -187,23 +181,4 @@ Kokonaisuutena projekti osoitti hyvin, miten eri neuroverkkoratkaisuja voidaan s
 
 ## Tekoälyn käyttö
 
-Tässä projektissa tekoälyä käytettiin tukityökaluna projektin suunnittelussa, koodirungon ideoinnissa, dokumentaation rakentamisessa ja raportin jäsentelyssä. Tekoäly auttoi erityisesti seuraavissa asioissa:
-
-- projektirungon suunnittelu
-- tiedostorakenteen ja notebook-pohjan luonnostelu
-- raporttipohjan laatiminen
-- tulosten sanallinen tulkinta
-
-Kaikki ratkaisut käytiin kuitenkin läpi ja niitä muokattiin projektin tarpeisiin sopiviksi. Datasetin rakenne, mallien ajaminen, tulosten tarkastelu ja lopullinen raportointi perustuivat projektissa itse tehtyihin valintoihin ja toteutuneisiin ajoihin.
-
-Tekoälyn käyttö dokumentoidaan avoimesti, koska kurssin tehtävänannon mukaan olennaista ei ole vain käyttää apuvälineitä, vaan ymmärtää, mitä koodi tekee ja pystyä selittämään ratkaisut itse. Siksi projektissa käytetyt mallit, hyperparametrit ja analyysit perustuvat toteutuksen aikana tehtyihin päätöksiin, eivät sokeasti kopioituun sisältöön.
-
-## Palautuschecklist
-
-Varmista ennen palautusta:
-
-- notebook on ajettu loppuun asti
-- notebookista on tehty `.html`-versio
-- datasetin lähde tai linkki on mukana
-- mallien ajamiseen on selkeät ohjeet
-- raportissa on sekä tekninen analyysi että eettinen pohdinta
+Tässä projektissa tekoälyä hyödynnettiin projektirungon, dokumentaation ja raportin jäsentelyn tukena. Mallien koulutus, datan käsittely, tulosten analyysi ja lopulliset johtopäätökset perustuivat projektissa tehtyihin omiin ajoihin ja valintoihin.

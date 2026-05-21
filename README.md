@@ -4,20 +4,15 @@ Tämä projekti on loppuprojekti 4 kurssille. Tavoitteena on luokitella kasvojen
 
 ## Projektin tavoite
 
-Rakennetaan kuvapohjainen tunnetilaluokittelija, joka tunnistaa ihmisten kasvoista perustunnetiloja. Ensimmäinen toteutus perustuu FER-2013-datasettiin ja siirto-oppimiseen. Tuloksia verrataan ainakin kahden malliasetelman välillä:
+Rakennetaan kuvapohjainen tunnetilaluokittelija, joka tunnistaa ihmisten kasvoista perustunnetiloja. Toteutus perustuu FER-2013-datasettiin ja sisältää kolmen malliasetelman vertailun:
 
 1. Oma baseline-CNN
-2. Siirto-oppimismalli, esimerkiksi MobileNetV2 tai EfficientNetB0
-
-Mahdollinen jatkolaajennus:
-
-- fine-tuning siirto-oppimismallille
-- usean mallin vertailu
-- yksinkertainen ensemble kahdesta parhaasta mallista
+2. MobileNetV2 feature extraction
+3. MobileNetV2 fine-tuning
 
 ## Datasetti
 
-Suositeltu datasetti:
+Projektissa käytetty datasetti:
 
 - FER-2013
 
@@ -85,7 +80,7 @@ Notebook sisältää:
 - datasetin tarkistuksen
 - baseline-CNN:n koulutuksen
 - MobileNetV2 feature extraction -koulutuksen
-- valinnaisen fine-tuning-vaiheen
+- fine-tuning-vaiheen
 - confusion matrixin ja luokitteluraportin
 
 Skriptipohjainen ajo on edelleen hyödyllinen nopeissa kokeiluissa:
@@ -114,16 +109,18 @@ python src/train.py --mode finetune --data_dir dataset/raw --epochs 20 --batch_s
 python src/evaluate.py --model_path models/feature_best.keras --data_dir dataset/raw --split test --image_size 96 --output_prefix report/feature_eval
 ```
 
-## Tuotokset
+## Repossa mukana
 
-Projektin keskeiset tuotokset ovat:
+Projektin keskeiset tiedostot ja tuotokset ovat:
 
 - notebook `.ipynb`
 - notebookin `.html`-versio
 - datasetin lähde tai linkki FER-2013-datasettiin
-- koulutettujen mallien tiedostot tai ohjeet niiden uudelleenkouluttamiseen
+- ohjeet mallien uudelleenkouluttamiseen
 - valmis raportti tai kattavasti dokumentoitu notebook
 - tekoälyn käytön dokumentointi
+
+Raakadataa ja koulutettuja mallipainoja ei versionoida repossa. Datasetti sijoitetaan paikallisesti `dataset/raw/`-kansioon ja mallit tallentuvat koulutuksen aikana `models/`-kansioon.
 
 HTML-version voi tehdä esimerkiksi komennolla:
 

@@ -45,14 +45,14 @@ Jos FER-2013 tulee yhtenä CSV-tiedostona, se muunnetaan ensin yllä olevaan hak
 
 - `project_plan.md` : lyhyt projektisuunnitelma
 - `dataset/README.md` : datan asetteluohje
-- `notebooks/01_emotion_recognition_fer2013.ipynb` : toistettava notebook-versio opettajaa ja palautusta varten
+- `notebooks/01_emotion_recognition_fer2013.ipynb` : projektin päänotebook, jossa datan tarkistus, koulutus ja arviointi on koottu yhteen
 - `src/data_pipeline.py` : datan lataus ja augmentaatio
 - `src/models.py` : baseline- ja transfer learning -mallit
 - `src/train.py` : mallin koulutus
 - `src/evaluate.py` : testiarviointi ja confusion matrix
 - `src/inference.py` : yksittäisen kuvan ennustus
 - `report/` : kuvat, tulokset ja raportti
-- `notebooks/` : myöhempi notebook-versio palautusta varten
+- `notebooks/` : projektin notebookit ja niiden vientiversiot
 
 ## Asennus
 
@@ -74,7 +74,7 @@ python -m ipykernel install --user --name tunnetila-fer --display-name "Python (
 
 ## Koulutus
 
-Projektin voi toteuttaa joko skripteillä tai notebookin kautta. Palautusta ja toistettavuutta varten suositeltu tapa on ajaa notebook:
+Projektin voi toteuttaa joko skripteillä tai notebookin kautta. Selkein tapa ajaa koko työnkulku on käyttää notebookia:
 
 ```bash
 jupyter notebook notebooks/01_emotion_recognition_fer2013.ipynb
@@ -114,9 +114,9 @@ python src/train.py --mode finetune --data_dir dataset/raw --epochs 20 --batch_s
 python src/evaluate.py --model_path models/feature_best.keras --data_dir dataset/raw --split test --image_size 96 --output_prefix report/feature_eval
 ```
 
-## Palautusta varten
+## Tuotokset
 
-Tehtävänannon näkökulmasta lopullisessa palautuksessa pitäisi olla vähintään:
+Projektin keskeiset tuotokset ovat:
 
 - notebook `.ipynb`
 - notebookin `.html`-versio
